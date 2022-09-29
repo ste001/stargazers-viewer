@@ -1,15 +1,14 @@
-import { Octokit } from "@octokit/core"
+import { Octokit } from "@octokit/core";
 
 const octokit = new Octokit({
-  auth: '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'
-})
+  auth: "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",
+});
 
-const getStargazers = async (owner: String, repo: String) => {
+const getStargazers = async (owner: string, repo: string, page: number) => {
   const data = await octokit.request(`GET /repos/${owner}/${repo}/stargazers`, {
-    owner: 'OWNER',
-    repo: 'REPO'
+    page,
   });
   return data;
-}
+};
 
-export { getStargazers }
+export { getStargazers };
