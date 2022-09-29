@@ -13,7 +13,7 @@ const UserCard: React.FC<CardProps> = ({ name, image }) => {
         <Text>{name}</Text>
       </View>
       <View>
-        <Image source={{uri: image}} style={{width: 46, height: 46, borderTopRightRadius: 8, borderBottomRightRadius: 8}}/>
+        <Image source={{uri: image}} style={styles.image}/>
       </View>
     </View>
   )
@@ -32,6 +32,12 @@ const styles = StyleSheet.create({
     width: 300,
     height: 50,
     marginBottom: 10,
+  },
+  image: {
+    width: 46,
+    height: 46,
+    borderTopRightRadius: 8,
+    borderBottomRightRadius: 8
   },
 });
 
