@@ -13,6 +13,7 @@ export default function App() {
   interface User {
     login: string,
     avatar_url: string,
+    id: string,
   }
 
   const fetchStargazers = async (owner: string, repo: string, page: number) => {
