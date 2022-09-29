@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FlatList, Keyboard, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Alert, FlatList, SafeAreaView, StyleSheet, Text, TextInput } from 'react-native';
 import MainButton from './components/MainButton';
 import UserCard from './components/UserCard';
 import { statusMap } from './constants/constants';
@@ -29,7 +29,7 @@ export default function App() {
         }
       }
     } catch (error: any) {
-      console.error(error.message);
+      Alert.alert("Owner and/or repo non-existent")
     }
   }
 
