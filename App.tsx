@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FlatList, Keyboard, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import MainButton from './components/MainButton';
 import UserCard from './components/UserCard';
 import { statusMap } from './constants/constants';
 import { getStargazers } from './services/starring';
@@ -67,13 +68,11 @@ export default function App() {
         keyboardType='default'
         autoCapitalize='none'
       />
-      <TouchableOpacity
-        style={styles.button}
+      <MainButton
         onPress={() => searchStargazers()}
         disabled={owner.length === 0 || repo.length === 0}
-      >
-        <Text>Search stargazers</Text>
-      </TouchableOpacity>
+        text="Search stargazers"
+      />
       {users.length > 0 && (
           <FlatList
             data={users}
@@ -106,12 +105,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 10,
-  },
-  button: {
-    alignItems: "center",
-    backgroundColor: "#DDDDDD",
-    padding: 10,
-    borderRadius: 10,
-    marginBottom: 10,
   },
 });
